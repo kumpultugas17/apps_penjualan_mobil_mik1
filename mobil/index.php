@@ -83,9 +83,9 @@
                         <td><?= $data['merk_mobil'] ?></td>
                         <td><?= $data['deskripsi'] ?></td>
                         <td><?= $data['stok'] ?></td>
-                        <td><?= $data['harga'] ?></td>
+                        <td><?= "Rp. " . number_format($data['harga'], 0, ',', '.') ?></td>
                         <td>
-                           <a href="" class="btn btn-sm btn-warning">Edit</a>
+                           <a href="edit_mobil.php?id=<?= $data['id_mobil'] ?>" class="btn btn-sm btn-warning">Edit</a>
                            <a href="" class="btn btn-sm btn-danger">Hapus</a>
                         </td>
                      </tr>
