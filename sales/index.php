@@ -30,8 +30,8 @@
                      Data Master
                   </a>
                   <ul class="dropdown-menu">
-                     <li><a class="dropdown-item" href="index.php">Data Mobil</a></li>
-                     <li><a class="dropdown-item" href="../sales/index.php">Data Sales</a></li>
+                     <li><a class="dropdown-item" href="../mobil/index.php">Data Mobil</a></li>
+                     <li><a class="dropdown-item" href="index.php">Data Sales</a></li>
                   </ul>
                </li>
                <li class="nav-item">
@@ -52,20 +52,17 @@
                </div>
             <?php } else { ?>
                <div class="alert alert-dark py-2">
-                  DATA MOBIL
+                  DATA SALES
                </div>
             <?php } ?>
-            <a href="tambah_mobil.php" class="btn btn-sm btn-primary mb-2 float-end">Tambah</a>
+            <a href="tambah_sales.php" class="btn btn-sm btn-primary mb-2 float-end">Tambah</a>
             <table class="table table-striped">
                <thead class="table-light">
                   <tr>
                      <th>No</th>
-                     <th>Nama Mobil</th>
-                     <th>Merk</th>
-                     <th>Tipe</th>
-                     <th>Deskrispi</th>
-                     <th>Stok</th>
-                     <th>Harga</th>
+                     <th>Nama Sales</th>
+                     <th>Alamat</th>
+                     <th>Telepon</th>
                      <th></th>
                   </tr>
                </thead>
@@ -73,20 +70,17 @@
                   <?php
                   require_once('../config.php');
                   $no = 1;
-                  $query = $conn->query("SELECT * FROM mobil ORDER BY id_mobil DESC");
+                  $query = $conn->query("SELECT * FROM sales ORDER BY id_sales DESC");
                   foreach ($query as $data) :
                   ?>
                      <tr>
                         <td><?= $no++; ?></td>
-                        <td><?= $data['nama_mobil'] ?></td>
-                        <td><?= $data['tipe_mobil'] ?></td>
-                        <td><?= $data['merk_mobil'] ?></td>
-                        <td><?= $data['deskripsi'] ?></td>
-                        <td><?= $data['stok'] ?></td>
-                        <td><?= "Rp. " . number_format($data['harga'], 0, ',', '.') ?></td>
+                        <td><?= $data['nama_sales'] ?></td>
+                        <td><?= $data['alamat'] ?></td>
+                        <td><?= $data['telepon'] ?></td>
                         <td>
-                           <a href="edit_mobil.php?id=<?= $data['id_mobil'] ?>" class="btn btn-sm btn-warning">Edit</a>
-                           <a href="act_hapus.php.php?id=<?= $data['id_mobil'] ?>" class="btn btn-sm btn-danger">Hapus</a>
+                           <a href="edit_sales.php?id=<?= $data['id_sales'] ?>" class="btn btn-sm btn-warning">Edit</a>
+                           <a href="act_hapus.php?id=<?= $data['id_sales'] ?>" onclick="return confirm('Yakin data akan dihapus?')" class="btn btn-sm btn-danger">Hapus</a>
                         </td>
                      </tr>
                   <?php
