@@ -93,7 +93,7 @@
                         <th><?= $total; ?></th>
                         <td>
                            <a href="edit_sales.php?id=<?= $data['id_transaksi'] ?>" class="btn btn-sm btn-warning">Edit</a>
-                           <a href="act_hapus.php?id=<?= $data['id_transaksi'] ?>" onclick="return confirm('Yakin data akan dihapus?')" class="btn btn-sm btn-danger">Hapus</a>
+                           <a href="proses.php?action=hapus&id=<?= $data['id_transaksi'] ?>" onclick="return confirm('Yakin data akan dihapus?')" class="btn btn-sm btn-danger">Hapus</a>
                         </td>
                      </tr>
                   <?php
@@ -155,13 +155,13 @@
                   </select>
                </div>
                <div class="mb-3">
-                  <label for="" class="form-label">Terjual</label>
-                  <input type="number" class="form-control" name="jumlah">
+                  <label for="jumlah" class="form-label">Terjual</label>
+                  <input type="number" class="form-control" id="jumlah" name="jumlah">
                </div>
             </div>
             <div class="modal-footer">
                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-               <button type="submit" class="btn btn-primary">Submit</button>
+               <button type="submit" name="submit" class="btn btn-primary">Submit</button>
             </div>
          </form>
       </div>
