@@ -86,7 +86,7 @@
                         <td><?= "Rp. " . number_format($data['harga'], 0, ',', '.') ?></td>
                         <td>
                            <a href="edit_mobil.php?id=<?= $data['id_mobil'] ?>" class="btn btn-sm btn-warning">Edit</a>
-                           <a href="act_hapus.php.php?id=<?= $data['id_mobil'] ?>" class="btn btn-sm btn-danger">Hapus</a>
+                           <a href="act_hapus.php?id=<?= $data['id_mobil'] ?>" class="btn btn-sm btn-danger">Hapus</a>
                         </td>
                      </tr>
                   <?php
