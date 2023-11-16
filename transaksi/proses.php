@@ -16,8 +16,21 @@ if ($_GET['action'] == "simpan") {
       }
    }
 } elseif ($_GET['action'] == "edit") {
-   // koding update
-   echo "Koding Proses Update";
+   if (isset($_POST['submit'])) {
+      $id_transaksi = $_REQUEST['id_transaksi'];
+      $tgl_transaksi = $_REQUEST['tgl_transaksi'];
+      $nama_sales = $_REQUEST['nama_sales'];
+      $nama_mobil = $_REQUEST['nama_mobil'];
+      $jumlah = $_REQUEST['jumlah'];
+
+      $query = $conn->query("UPDATE transaksi SET tgl_transaksi = '$tgl_transaksi', sales_id = '$nama_sales', mobil_id = '$nama_mobil', jual = '$jumlah' WHERE id_transaksi = '$id_transaksi'");
+
+      if ($query) {
+         header("location:index.php?alert=1");
+      } else {
+         header("location:index.php?alert=0");
+      }
+   }
 } elseif ($_GET['action'] == "hapus") {
    if (isset($_GET['id'])) {
       $id = $_GET['id'];
