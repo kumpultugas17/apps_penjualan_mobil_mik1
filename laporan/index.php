@@ -69,7 +69,8 @@
                     </div>
                     <div class="col">
                       <button type="submit" class="btn btn-primary mb-3">Cari Data</button>
-                      <a class="btn btn-success mb-3 float-end" href="">Print (Coming Soon)</a>
+                      <a class="btn btn-success mb-3 float-end ms-2" href="excel.php?kata_kunci=<?= $_GET['kata_kunci'] ?>" target="_blank">Print Excel</a>
+                      <a class="btn btn-danger mb-3 float-end" href="pdf.php?kata_kunci=<?= $_GET['kata_kunci'] ?>" target="_blank">Print PDF</a>
                     </div>
                   </form>
                 </div>
